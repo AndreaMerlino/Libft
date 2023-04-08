@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amerlino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 20:54:19 by amerlino          #+#    #+#             */
-/*   Updated: 2023/04/07 20:31:51 by amerlino         ###   ########.fr       */
+/*   Created: 2023/04/08 20:21:44 by amerlino          #+#    #+#             */
+/*   Updated: 2023/04/08 20:21:46 by amerlino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*p;
-	size_t			i;
+	int	i;
+	int	n;
 
 	i = 0;
-	p = s;
-	while (i < n)
+	n = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (n < len)
 	{
-		*p = 0;
-		p ++;
-		i ++;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+		n++;
 	}
+	return (dst);
 }
