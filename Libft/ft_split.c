@@ -96,17 +96,20 @@ char **ft_split(char const *s, char c)
 	int parole;
 	int i;
 	int j;
+	int a;
 	char **split;
 
 	split = ((char**)malloc(i + 1) * sizeof(char*));
 	parole = word(s,c);
 	while(parole < i)
 	{
-		while(!c)
+		while(*s++ != c)
 			j++;
 		split[i] =(char*)malloc(j +1);
-		while (a < j)	
+		*s - j;
+		while (a <= j)	
 			split[i][a++] = *s++;
+		while(*s++ != 
 		
 
 
@@ -119,7 +122,7 @@ char **ft_split(char const *s, char c)
 int main()
 { 
 	char stringa[] ="aajjjjjaakkkaooaaappaa";
-	char c = 'a';
+	char  = 'a';
 	printf("%d\n", ft_split(stringa, c));
 	return(0);
 }
